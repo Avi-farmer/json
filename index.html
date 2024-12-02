@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>My Shop</title>
+</head>
+
+<body onload="viewAllData()">
+    <section class="bg-warning">
+        <header class="d-flex justify-content-between align-items-center px-4 py-2">
+            <h3 class="text-dark">My shop</h3>
+            <div class="btn-group">
+                <input type="text" placeholder="search" class="form-control" id="itemSearch">
+                <button class="btn btn-dark" onclick="searchItem()"><i class="bi bi-search"></i></button>
+            </div>
+            <button class="bi bi-cart4 btn btn-warning fs-3 position-relative" data-bs-toggle="offcanvas"
+                data-bs-target="#cartDisplay"><span
+                    class="badge bg-danger rounded rounded-circle fs-6 position-absolute top-0 end-0"
+                    id="cartCount"></span></button>
+            <section class="offcanvas offcanvas-end" id="cartDisplay" tabindex="-1">
+                <div class="offcanvas-header bg-warning">
+                    <h1 class="text-dark">Cart</h1>
+                    <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body" id="itemDisplay">
+                </div>
+            </section>
+        </header>
+    </section>
+    <section class="row container-fluid">
+        <div class="col-sm-2">
+            <div>
+                <label for="" class="form-label fs-4 pt-3">Category Items</label>
+                <div class="pb-4">
+                    <select name="item" class="form-select" id="categories" onchange="categoriChange()"></select>
+                    <option></option>
+                </div>
+            </div>
+            <div class="pt-4">
+                <label for="rating" class="fs-3 my-3">Rating <i class="bi bi-star-fill text-success px-2"></i></label>
+                <div>
+                    <input type="checkbox" onchange="ratingChange()" value="4.5" class="form-check-input rating-filter">
+                    <label for=""><span class="bi bi-star-fill text-success px-1"></span>Above 4.5</label>
+                </div>
+                <div>
+                    <input type="checkbox" onchange="ratingChange()" value="4.0" class="form-check-input rating-filter">
+                    <label for=""><span class="bi bi-star-fill text-success px-1"></span>Above 4.0</label>
+                </div>
+                <div>
+                    <input type="checkbox" onchange="ratingChange()" value="3.5" class="form-check-input rating-filter">
+                    <label for=""><span class="bi bi-star-fill text-success px-1"></span>Above 3.5</label>
+                </div>
+                <div>
+                    <input type="checkbox" onchange="ratingChange()" value="3.0" class="form-check-input rating-filter">
+                    <label for=""><span class="bi bi-star-fill text-success px-1"></span>Above 3.0</label>
+                </div>
+            </div>
+        </div>
+        <main class="col-sm-10 d-flex flex-wrap overflow-auto justify-content-center align-items-center" style="height: 90vh;">
+
+        </main>
+    </section>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
